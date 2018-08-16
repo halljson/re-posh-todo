@@ -1,16 +1,44 @@
+# libs this project uses
+
+- [Datascript](https://github.com/tonsky/datascript)
+- [Posh](https://github.com/mpdairy/posh): allows the declarative binding of user interface components to a local DataScript database.
+- [Re-frame](https://github.com/Day8/re-frame): is a pattern for writing SPAs in CLJS, using [Reagent (aka. react)](http://reagent-project.github.io/) and an event dispatch/subscribe mechanism that make it possible to manage state-manipulating user actions. See aforementioned [buzzwords statement here](https://github.com/Day8/re-frame#why-should-you-care).
+- [Re-posh](https://github.com/denistakeda/re-posh): "a library that empowers you to improve your re-frame single-page applications to have a robust and flexible in-page database to manage your application's state"
+
+- Noteworthy excerpts; 
+- Re-frame innards are [just a loop](https://github.com/Day8/re-frame#it-is-a-loop)
+- [Re-frame development workflow](https://github.com/Day8/re-frame#so-your-job-is-) - only stand to improve this with re-posh
+
+### (TLDR);
+
+```cljs
+
+;; this is the view from like... pluto
+
+(def datascript (cljs.magically/browserify :datomic)) 
+  
+(def posh (+ :ui-components :datascript))
+  
+(def re-frame (+ :cljs :buzzwords :react))
+
+(def re-posh (+ :posh :re-frame))
+```
+
+
 # Todo
 
-This is a Todo application using
-[Posh](https://github.com/mpdairy/posh), a library that lets you
-easily use a DataScript database to keep your entire app state.
+This is a [TodoMVC-esque](https://github.com/tastejs/todomvc) application, forked from [Posh-todo](https://github.com/mpdairy/posh-todo). The intent of this project is to replace Posh-todo's use of [Posh](https://github.com/mpdairy/posh) with [Re-Posh](https://github.com/denistakeda/re-posh). Hence the name ... my, how clever I am after work these days.
 
-This Todo app lets you add or delete tasks to different categories and
-view by checked/unchecked or by category.
 
-There's no styling and it's a really lame todo list, but I made it
-just to show an example of how to use Posh.
+~~This Todo app lets you add or delete tasks to different categories and view by checked/unchecked or by category.~~
 
-You can see posh-todo in action here: http://otherway.org/posh-todo/
+~~There's no styling and it's a really lame todo list, but I made it just to show an example of how to use Posh.~~
+
+* (strikethrough only tempory, until development is stable)
+
+~~You can see posh-todo in action here: http://otherway.org/posh-todo/~~
+
+;; TODO I'll try to get a demo up as soon as I can get it working ;).
 
 ## Usage
 
